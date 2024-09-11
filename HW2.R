@@ -33,12 +33,13 @@ spx_plot2
 ### Exercise 2
 book_data <- read.csv("BookGenres")
 
-bookplot <- ggplot(book_data, aes(x = Category, y = Price.Starting.With...., color = Season)) +
+bookplot <- ggplot(book_data, aes(x = Category, y = Price, color = Season)) +
   geom_jitter(alpha = 0.40, width = 0.2) +
   labs(title = "The Price of Fiction Books by Genre and Season",
        x = "Genre", y = "Price ($)") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 30, hjust = 1))
+bookplot
 
 ### Exercise 3
 squirrel_data <- read.csv("squirrel")
