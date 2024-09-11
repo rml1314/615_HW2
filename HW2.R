@@ -6,14 +6,18 @@
 #Put your code in this file. Make sure you assign the relevant values to the correct variable names, which are given below. 
 #Uncomment the variables as you assign your final values/functions/results to them.
 
-library(tidyverse)# This loads the packages necessary to run your plots. Do not delete or comment this out.
+library(dplyr)
+library(tidyr)
+library(tibble)
+library(ggplot2)
+library(stringr)# This loads the packages necessary to run your plots. Do not delete or comment this out.
+
 
 ### Exercise 1
 # Step 1
 sp500_data <- read.csv("SPX-1Month")
 
 # Step 2
-library(ggplot2)
 spx_plot1 <- ggplot(sp500_data, aes(x = Date, y = Close.Last, group = 1)) +
   geom_line() +
   geom_point()
@@ -60,7 +64,7 @@ bigMac
 
 logBigMac <- ggplot(bigMac_data, aes(x = log(as.numeric(GDP.Per.Capita)), y = dollar_price)) +
   labs(title = "Countries' GDP Per Capita compared to their Big Mac Index", 
-       y = "Dollar Price of a Big Mac", x = "GDP per Capita in Dollars") +
+       y = "Dollar Price of a Big Mac", x = "Log of Dollar GDP Per Capita") +
   geom_smooth(method="loess", se = TRUE) +
   geom_point()
 logBigMac
